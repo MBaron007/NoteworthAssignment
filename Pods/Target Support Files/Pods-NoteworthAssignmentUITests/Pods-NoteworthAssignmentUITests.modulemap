@@ -1,0 +1,6 @@
+framework module Pods_NoteworthAssignmentUITests {
+  umbrella header "Pods-NoteworthAssignmentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
