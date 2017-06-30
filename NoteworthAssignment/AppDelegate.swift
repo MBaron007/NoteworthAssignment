@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -25,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         // Set the AddressAndRadiusViewController as the rootVC of a new UINavigationController, and set the navigation controller as the rootViewController of the window
-        let newaddressAndRadiusViewController = AddressAndRadiusViewController()
-        let rootNavigationController = UINavigationController(rootViewController: newaddressAndRadiusViewController)
+        let initialInputAddressViewController = InitialInputAddressViewController()
+        let rootNavigationController = UINavigationController(rootViewController: initialInputAddressViewController)
         
         self.window?.rootViewController = rootNavigationController
         self.window?.makeKeyAndVisible()
