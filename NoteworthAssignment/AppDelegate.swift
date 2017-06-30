@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GooglePlaces
+
+let googleAPIKey = "AIzaSyCxMwYasW7hd4qzsKGuCyLm1TlcZpQs3P8"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSPlacesClient.provideAPIKey(googleAPIKey)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
