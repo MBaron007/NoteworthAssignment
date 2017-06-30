@@ -15,6 +15,8 @@
 		5EFFCE8C1F048A4B00D50539 /* NoteworthAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCE8B1F048A4B00D50539 /* NoteworthAssignmentUITests.swift */; };
 		5EFFCE9B1F048B3400D50539 /* AddressAndRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCE991F048B3400D50539 /* AddressAndRadiusViewController.swift */; };
 		5EFFCE9C1F048B3400D50539 /* AddressAndRadiusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFFCE9A1F048B3400D50539 /* AddressAndRadiusViewController.xib */; };
+		5EFFCE9F1F06108E00D50539 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCE9E1F06108E00D50539 /* TabBarController.swift */; };
+		5EFFCEA11F0611E900D50539 /* StoreListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCEA01F0611E900D50539 /* StoreListTableViewController.swift */; };
 		988B11B3F10A7270D325E9C2 /* Pods_NoteworthAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C71CA6A59F585386EFBDFB0 /* Pods_NoteworthAssignment.framework */; };
 		E89A0B82FC51A5F8508A32E5 /* Pods_NoteworthAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F688A9B2B1B9D47984F3550 /* Pods_NoteworthAssignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		5EFFCE8D1F048A4B00D50539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EFFCE991F048B3400D50539 /* AddressAndRadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAndRadiusViewController.swift; sourceTree = "<group>"; };
 		5EFFCE9A1F048B3400D50539 /* AddressAndRadiusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressAndRadiusViewController.xib; sourceTree = "<group>"; };
+		5EFFCE9E1F06108E00D50539 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5EFFCEA01F0611E900D50539 /* StoreListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListTableViewController.swift; sourceTree = "<group>"; };
 		C0EBB9ECDF45402FE897CCD3 /* Pods-NoteworthAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignment/Pods-NoteworthAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		D1D8093AAE688CC4B0F31F9B /* Pods-NoteworthAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentUITests/Pods-NoteworthAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E00FBADE31B461791F204375 /* Pods-NoteworthAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentTests/Pods-NoteworthAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				5EFFCE741F048A4B00D50539 /* LaunchScreen.storyboard */,
 				5EFFCE771F048A4B00D50539 /* Info.plist */,
 				5EFFCE991F048B3400D50539 /* AddressAndRadiusViewController.swift */,
+				5EFFCE9E1F06108E00D50539 /* TabBarController.swift */,
+				5EFFCEA01F0611E900D50539 /* StoreListTableViewController.swift */,
 				5EFFCE9A1F048B3400D50539 /* AddressAndRadiusViewController.xib */,
 			);
 			path = NoteworthAssignment;
@@ -449,6 +455,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFFCE9F1F06108E00D50539 /* TabBarController.swift in Sources */,
+				5EFFCEA11F0611E900D50539 /* StoreListTableViewController.swift in Sources */,
 				5EFFCE6C1F048A4B00D50539 /* AppDelegate.swift in Sources */,
 				5EFFCE9B1F048B3400D50539 /* AddressAndRadiusViewController.swift in Sources */,
 			);
@@ -701,6 +709,7 @@
 				5EFFCE921F048A4B00D50539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EFFCE931F048A4B00D50539 /* Build configuration list for PBXNativeTarget "NoteworthAssignmentTests" */ = {
 			isa = XCConfigurationList;
@@ -709,6 +718,7 @@
 				5EFFCE951F048A4B00D50539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EFFCE961F048A4B00D50539 /* Build configuration list for PBXNativeTarget "NoteworthAssignmentUITests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +727,7 @@
 				5EFFCE981F048A4B00D50539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
