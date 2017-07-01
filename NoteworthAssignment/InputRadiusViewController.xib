@@ -21,16 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VuA-ZJ-7JN">
-                    <rect key="frame" x="112" y="303.5" width="151.5" height="60"/>
+                    <rect key="frame" x="106.5" y="303.5" width="162.5" height="60"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter radius in miles" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qm-TT-7uC">
-                            <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter radius in meters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qm-TT-7uC">
+                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auq-Hb-kxF">
-                            <rect key="frame" x="0.0" y="30" width="151.5" height="30"/>
+                            <rect key="frame" x="0.0" y="30" width="162.5" height="30"/>
                             <state key="normal" title="Submit Radius"/>
                             <connections>
                                 <action selector="submitRadiusButtonTapped:" destination="-1" eventType="touchUpInside" id="Sgd-Qq-86I"/>

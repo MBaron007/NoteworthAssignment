@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import GooglePlacePicker
 
 let googleAPIKey = "AIzaSyCxMwYasW7hd4qzsKGuCyLm1TlcZpQs3P8"
 
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GMSPlacesClient.provideAPIKey(googleAPIKey)
+        GMSServices.provideAPIKey(googleAPIKey)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
