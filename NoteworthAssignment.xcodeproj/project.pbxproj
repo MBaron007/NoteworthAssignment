@@ -19,6 +19,8 @@
 		5EFFCEA71F061FA600D50539 /* InitialInputAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFFCEA51F061FA600D50539 /* InitialInputAddressViewController.xib */; };
 		5EFFCEAA1F075FF800D50539 /* InputRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCEA81F075FF800D50539 /* InputRadiusViewController.swift */; };
 		5EFFCEAB1F075FF800D50539 /* InputRadiusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFFCEA91F075FF800D50539 /* InputRadiusViewController.xib */; };
+		5EFFCEAD1F083DE300D50539 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCEAC1F083DE300D50539 /* NetworkController.swift */; };
+		5EFFCEAF1F0840ED00D50539 /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCEAE1F0840ED00D50539 /* Dictionary+Additions.swift */; };
 		988B11B3F10A7270D325E9C2 /* Pods_NoteworthAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C71CA6A59F585386EFBDFB0 /* Pods_NoteworthAssignment.framework */; };
 		E89A0B82FC51A5F8508A32E5 /* Pods_NoteworthAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F688A9B2B1B9D47984F3550 /* Pods_NoteworthAssignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		5EFFCEA51F061FA600D50539 /* InitialInputAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialInputAddressViewController.xib; sourceTree = "<group>"; };
 		5EFFCEA81F075FF800D50539 /* InputRadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRadiusViewController.swift; sourceTree = "<group>"; };
 		5EFFCEA91F075FF800D50539 /* InputRadiusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputRadiusViewController.xib; sourceTree = "<group>"; };
+		5EFFCEAC1F083DE300D50539 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		5EFFCEAE1F0840ED00D50539 /* Dictionary+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
 		C0EBB9ECDF45402FE897CCD3 /* Pods-NoteworthAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignment/Pods-NoteworthAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		D1D8093AAE688CC4B0F31F9B /* Pods-NoteworthAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentUITests/Pods-NoteworthAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E00FBADE31B461791F204375 /* Pods-NoteworthAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentTests/Pods-NoteworthAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				5EFFCE741F048A4B00D50539 /* LaunchScreen.storyboard */,
 				5EFFCE771F048A4B00D50539 /* Info.plist */,
 				5EFFCE9E1F06108E00D50539 /* TabBarController.swift */,
+				5EFFCEAC1F083DE300D50539 /* NetworkController.swift */,
+				5EFFCEAE1F0840ED00D50539 /* Dictionary+Additions.swift */,
 				5EFFCEA01F0611E900D50539 /* StoreListTableViewController.swift */,
 			);
 			path = NoteworthAssignment;
@@ -464,6 +470,8 @@
 			files = (
 				5EFFCE9F1F06108E00D50539 /* TabBarController.swift in Sources */,
 				5EFFCEA11F0611E900D50539 /* StoreListTableViewController.swift in Sources */,
+				5EFFCEAF1F0840ED00D50539 /* Dictionary+Additions.swift in Sources */,
+				5EFFCEAD1F083DE300D50539 /* NetworkController.swift in Sources */,
 				5EFFCE6C1F048A4B00D50539 /* AppDelegate.swift in Sources */,
 				5EFFCEA61F061FA600D50539 /* InitialInputAddressViewController.swift in Sources */,
 				5EFFCEAA1F075FF800D50539 /* InputRadiusViewController.swift in Sources */,

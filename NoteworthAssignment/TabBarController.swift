@@ -43,6 +43,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
         self.chosenPlace = place
         self.radius = radius
         super.init(nibName: nil, bundle: nil)
+        
+        NetworkController.sharedInstance.fetchPlaces(for: self.chosenPlace, and: self.radius) { (places) in
+            print("Places")
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
