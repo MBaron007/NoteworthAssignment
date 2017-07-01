@@ -22,13 +22,20 @@ class InitialInputAddressViewController: UIViewController {
     }
 }
 
+/// Note: The initial code for this extension was taken from Google's sample code.
 extension InitialInputAddressViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
-        dismiss(animated: true, completion: nil)
+        
+        
+        self.dismiss(animated: true) { 
+            let inputRadiusViewController = InputRadiusViewController(place: place)
+            
+            self.show(inputRadiusViewController, sender: self)
+        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {

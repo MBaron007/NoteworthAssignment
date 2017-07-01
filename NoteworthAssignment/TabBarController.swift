@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate  {
     
-    var address: String = ""
-    var radius: String = ""
+    let chosenPlace: GMSPlace
+    let radius: Double
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
         self.viewControllers = [storesListTab]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    init(place: GMSPlace, radius: Double) {
+        self.chosenPlace = place
+        self.radius = radius
+        super.init(nibName: nil, bundle: nil)
     }
     
-
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
