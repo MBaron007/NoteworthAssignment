@@ -20,3 +20,13 @@ public class Place {
     }
 }
 
+extension Place: Equatable {
+    public static func ==(lhs: Place, rhs: Place) -> Bool {
+        if (lhs.location.latitude == rhs.location.latitude) && (lhs.location.longitude == rhs.location.longitude) && (lhs.name == rhs.name) {
+            return true
+        }
+        
+        return false
+    }
+}
+

@@ -75,8 +75,13 @@ class NetworkController {
         let nearbySearchURLRequest = URLRequest(url: finalURLForNearbySearch)
         
         let task = self.urlSession.dataTask(with: nearbySearchURLRequest) { (data, response, error) in
-            self.processPlaces(data: data, error: error, completion: { (places) in
-                print(places)
+            self.processPlaces(data: data, error: error, completion: { (placesResult) in
+                switch placesResult {
+                case let .success(places):
+                    completion(.success(places))
+                case let .failure(error):
+                    completion(.failure(error))
+                }
             })
         }
         
@@ -117,7 +122,7 @@ class NetworkController {
                             resultArray.append(place)
                         case let .failure(error):
                             // TODO: Handle error
-                            print("Bleh")
+                            break
                         }
                         group.leave()
                     })

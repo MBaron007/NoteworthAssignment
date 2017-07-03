@@ -1,5 +1,5 @@
 //
-//  StoreListTableViewController.swift
+//  RestaurantListTableViewController.swift
 //  NoteworthAssignment
 //
 //  Created by Matthew Baron on 6/29/17.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class StoreListTableViewController: UITableViewController {
+class RestaurantListTableViewController: UITableViewController {
+    
+    fileprivate let placesDataSource: PlacesDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,14 @@ class StoreListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    init(placesDataSource: PlacesDataSource) {
+        self.placesDataSource = placesDataSource
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Table view data source

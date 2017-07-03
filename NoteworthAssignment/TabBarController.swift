@@ -12,6 +12,8 @@ import GooglePlacePicker
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate  {
     
+    fileprivate let placesDataSource: PlacesDataSource
+    
     let chosenPlace: GMSPlace
     let radius: Double
 
@@ -24,14 +26,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let storesListTab = StoreListTableViewController()
+        let storesListTab = RestaurantListTableViewController(placesDataSource: self.placesDataSource)
         let storesListTabItem = UITabBarItem(title: NSLocalizedString("List", comment: "Describes a list of stores"), image: nil, selectedImage: nil)
         storesListTab.tabBarItem = storesListTabItem
         
         let config = GMSPlacePickerConfig(viewport: self.chosenPlace.viewport)
         let placePickerTab = GMSPlacePickerViewController(config: config)
         placePickerTab.delegate = self
-        
         
         let placePickerTabItem = UITabBarItem(title: NSLocalizedString("Map", comment: "Describes a map of stores"), image: nil, selectedImage: nil)
         placePickerTab.tabBarItem = placePickerTabItem
@@ -42,11 +43,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
     init(place: GMSPlace, radius: Double) {
         self.chosenPlace = place
         self.radius = radius
+        self.placesDataSource = PlacesDataSource(initialPlace: self.chosenPlace, radius: self.radius)
         super.init(nibName: nil, bundle: nil)
-        
-        NetworkController.sharedInstance.fetchPlaces(for: self.chosenPlace, and: self.radius) { (places) in
-            print("Places")
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
