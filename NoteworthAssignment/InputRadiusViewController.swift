@@ -13,7 +13,7 @@ class InputRadiusViewController: UIViewController {
 
     @IBOutlet weak var radiusTextField: UITextField!
     @IBAction func submitRadiusButtonTapped(_ sender: Any) {
-        guard let inputtedText = self.radiusTextField.text, !inputtedText.isEmpty, let numberInputted = Double(inputtedText), numberInputted < 100.0 else {
+        guard let inputtedText = self.radiusTextField.text, !inputtedText.isEmpty, let numberInputted = Double(inputtedText), numberInputted < 1500.0 else {
             // TODO: Display error here
             return
         }
