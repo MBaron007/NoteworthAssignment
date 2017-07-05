@@ -13,17 +13,19 @@ import GoogleMaps
 class RestaurantMapViewController: UIViewController {
     
     let initialPlace: GMSPlace
+    
+    var nearbyPlaces = [Place]()
     let placesDataSource: PlacesDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    
     override func loadView() {
-        let camera = GMSCameraPosition.camera(withLatitude: self.initialPlace.coordinate.latitude, longitude: self.initialPlace.coordinate.longitude, zoom: 6.0)
+        
+        self.nearbyPlaces = self.placesDataSource.places
+        
+        let camera = GMSCameraPosition.camera(withLatitude: self.initialPlace.coordinate.latitude, longitude: self.initialPlace.coordinate.longitude, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = mapView
         
@@ -31,6 +33,15 @@ class RestaurantMapViewController: UIViewController {
         marker.position = CLLocationCoordinate2D(latitude: self.initialPlace.coordinate.latitude, longitude: self.initialPlace.coordinate.longitude)
         marker.title = self.initialPlace.name
         marker.map = mapView
+        
+        for place in self.nearbyPlaces {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: place.location.latitude, longitude: place.location.longitude)
+            marker.title = place.name
+            marker.map = mapView
+            marker.icon = GMSMarker.markerImage(with: .blue)
+
+        }
     }
     
     init(initialPlace: GMSPlace, placesDataSource: PlacesDataSource) {
@@ -42,6 +53,4 @@ class RestaurantMapViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 }

@@ -94,7 +94,7 @@ class NetworkController {
             return
         }
         
-        let result = self.places(fromJson: jsonData) { placesResult in
+        self.places(fromJson: jsonData) { placesResult in
             completion(placesResult)
         }
     }

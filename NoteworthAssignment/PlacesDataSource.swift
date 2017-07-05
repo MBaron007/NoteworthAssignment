@@ -20,17 +20,22 @@ class PlacesDataSource {
         self.radius = radius
     }
     
-    public func fetchNearbyPlaces(completion: @escaping NearbyPlacesCompletion) {
-        NetworkController.sharedInstance.fetchPlaces(for: self.initialPlace, and: self.radius) { (placesResult) in
-            switch placesResult {
-            case let .success(places):
-                self.add(places: places)
-            case .failure(_):
-                break
+    public func nearbyPlaces(completion: @escaping NearbyPlacesCompletion) {
+        
+        if !self.places.isEmpty {
+            completion(.success(self.places))
+        } else {
+            NetworkController.sharedInstance.fetchPlaces(for: self.initialPlace, and: self.radius) { (placesResult) in
+                switch placesResult {
+                case let .success(places):
+                    self.add(places: places)
+                case .failure(_):
+                    break
+                }
+                
+                
+                completion(placesResult)
             }
-            
-            
-            completion(placesResult)
         }
     }
     

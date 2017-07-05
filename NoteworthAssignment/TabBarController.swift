@@ -21,6 +21,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
         super.viewDidLoad()
 
         self.delegate = self
+        
+        self.placesDataSource.nearbyPlaces { (placesResult) in
+            switch placesResult {
+            case let .success(places):
+               break
+            case .failure(_):
+                // TODO: Add error handling
+                break
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
