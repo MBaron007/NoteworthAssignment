@@ -29,15 +29,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate  {
         let storesListTab = RestaurantListTableViewController(placesDataSource: self.placesDataSource)
         let storesListTabItem = UITabBarItem(title: NSLocalizedString("List", comment: "Describes a list of stores"), image: nil, selectedImage: nil)
         storesListTab.tabBarItem = storesListTabItem
+
+        let mapTab = RestaurantMapViewController(initialPlace: self.chosenPlace, placesDataSource: self.placesDataSource)
+        let mapTabItem = UITabBarItem(title: NSLocalizedString("Map", comment: "Describes a map of stores"), image: nil, selectedImage: nil)
+        mapTab.tabBarItem = mapTabItem
         
-        let config = GMSPlacePickerConfig(viewport: self.chosenPlace.viewport)
-        let placePickerTab = GMSPlacePickerViewController(config: config)
-        placePickerTab.delegate = self
-        
-        let placePickerTabItem = UITabBarItem(title: NSLocalizedString("Map", comment: "Describes a map of stores"), image: nil, selectedImage: nil)
-        placePickerTab.tabBarItem = placePickerTabItem
-        
-        self.viewControllers = [storesListTab, placePickerTab]        
+        self.viewControllers = [storesListTab, mapTab]
     }
 
     init(place: GMSPlace, radius: Double) {

@@ -23,6 +23,7 @@
 		5EFFCEAF1F0840ED00D50539 /* Dictionary+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCEAE1F0840ED00D50539 /* Dictionary+Additions.swift */; };
 		5EFFD4831F08798E003A17E7 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFD4821F08798E003A17E7 /* Place.swift */; };
 		5EFFD4851F0AC7BA003A17E7 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFD4841F0AC7BA003A17E7 /* PlacesDataSource.swift */; };
+		5EFFD4871F0AD1BA003A17E7 /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFD4861F0AD1BA003A17E7 /* RestaurantMapViewController.swift */; };
 		988B11B3F10A7270D325E9C2 /* Pods_NoteworthAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C71CA6A59F585386EFBDFB0 /* Pods_NoteworthAssignment.framework */; };
 		E89A0B82FC51A5F8508A32E5 /* Pods_NoteworthAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F688A9B2B1B9D47984F3550 /* Pods_NoteworthAssignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		5EFFCEAE1F0840ED00D50539 /* Dictionary+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Additions.swift"; sourceTree = "<group>"; };
 		5EFFD4821F08798E003A17E7 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		5EFFD4841F0AC7BA003A17E7 /* PlacesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
+		5EFFD4861F0AD1BA003A17E7 /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		C0EBB9ECDF45402FE897CCD3 /* Pods-NoteworthAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignment/Pods-NoteworthAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		D1D8093AAE688CC4B0F31F9B /* Pods-NoteworthAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentUITests/Pods-NoteworthAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E00FBADE31B461791F204375 /* Pods-NoteworthAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteworthAssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteworthAssignmentTests/Pods-NoteworthAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				5EFFCE741F048A4B00D50539 /* LaunchScreen.storyboard */,
 				5EFFCE771F048A4B00D50539 /* Info.plist */,
 				5EFFCE9E1F06108E00D50539 /* TabBarController.swift */,
+				5EFFD4861F0AD1BA003A17E7 /* RestaurantMapViewController.swift */,
 				5EFFCEAC1F083DE300D50539 /* NetworkController.swift */,
 				5EFFD4841F0AC7BA003A17E7 /* PlacesDataSource.swift */,
 				5EFFD4821F08798E003A17E7 /* Place.swift */,
@@ -478,6 +481,7 @@
 				5EFFCEA11F0611E900D50539 /* RestaurantListTableViewController.swift in Sources */,
 				5EFFCEAF1F0840ED00D50539 /* Dictionary+Additions.swift in Sources */,
 				5EFFD4831F08798E003A17E7 /* Place.swift in Sources */,
+				5EFFD4871F0AD1BA003A17E7 /* RestaurantMapViewController.swift in Sources */,
 				5EFFD4851F0AC7BA003A17E7 /* PlacesDataSource.swift in Sources */,
 				5EFFCEAD1F083DE300D50539 /* NetworkController.swift in Sources */,
 				5EFFCE6C1F048A4B00D50539 /* AppDelegate.swift in Sources */,

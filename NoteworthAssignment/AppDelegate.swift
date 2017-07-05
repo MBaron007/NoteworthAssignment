@@ -8,9 +8,9 @@
 
 import UIKit
 import GooglePlaces
-import GooglePlacePicker
+import GoogleMaps
 
-let googleAPIKey = "AIzaSyCxMwYasW7hd4qzsKGuCyLm1TlcZpQs3P8"
+let googleAPIKey = "AIzaSyCL0Z8bFou_mnS_Jedjg94iGDHDl45xULo"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
