@@ -16,12 +16,12 @@ public typealias NearbyPlacesCompletion = ((PlacesResult) -> Void)
 public typealias PlaceDetailCompletion = ((PlaceResult) -> Void)
 
 public enum PlacesResult {
-    case success([Place])
+    case success([GMSPlace])
     case failure(Error)
 }
 
 public enum PlaceResult {
-    case success(Place)
+    case success(GMSPlace)
     case failure(Error)
 }
 
@@ -39,6 +39,8 @@ class NetworkController {
     var googlePlaceDetailsBaseURL: URL? {
         return URL(string: "https://maps.googleapis.com/maps/api/place/details/json")
     }
+    
+    fileprivate let placesClient = GMSPlacesClient()
     
     /// Ensures that NetworkController is a singleton
     static let sharedInstance = NetworkController()
@@ -109,7 +111,7 @@ class NetworkController {
                 return
             }
             
-            var resultArray = [Place]()
+            var resultArray = [GMSPlace]()
             
             let group = DispatchGroup()
             
@@ -139,66 +141,18 @@ class NetworkController {
     }
     
     fileprivate func getPlaceDetails(placeId: String, completion: @escaping PlaceDetailCompletion) {
-        guard let placeDetailURL = self.googlePlaceDetailsBaseURL else {
-            completion(.failure(PlacesError.malformedURL))
-            return
-        }
-        
-        var parameters = [String: Any]()
-        
-        parameters["key"] = googleAPIKey
-        parameters["place_id"] = placeId
-        
-        let queryStringParameters = parameters.stringFromHttpParameters()
-        
-        guard let finalURLForPlaceDetail = URL(string: "\(placeDetailURL)?\(queryStringParameters)") else {
-            completion(.failure(PlacesError.malformedURL))
-            return
-        }
-        
-        let placeDetailURLRequest = URLRequest(url: finalURLForPlaceDetail)
-        
-        let task = self.urlSession.dataTask(with: placeDetailURLRequest) { (data, response, error) in
-            self.processPlace(data: data, error: error, completion: { (placeResult) in
-                completion(placeResult)
-            })
-        }
-        
-        task.resume()
-    }
-    
-    private func processPlace(data: Data?, error: Error?, completion: @escaping PlaceDetailCompletion) {
-        guard let jsonData = data else {
-            // TODO: Error handling
-            return
-        }
-        
-        let result = self.place(fromJson: jsonData)
-        
-        completion(result)
-    }
-    
-    fileprivate func place(fromJson data: Data) -> PlaceResult {
-        do {
-            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            // Ensure we have a value for the key "locations", since that's where all the store data is meant to be
-            guard let jsonDictionary = jsonObject as? [String: Any], let place = jsonDictionary["result"] as? [String: Any]  else {
-                return .failure(PlacesError.invalidData)
+        self.placesClient.lookUpPlaceID(placeId) { (place, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
             }
             
-                
-            if let name = place["name"] as? String, let geometry = place["geometry"] as? [String: Any], let location = geometry["location"] as? [String: Any], let latitude = location["lat"] as? Double, let longitude = location["lng"] as? Double {
-                
-                let newPlace = Place(location: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), name: name)
-                return .success(newPlace)
+            guard let existingPlace = place else {
+                completion(.failure(PlacesError.invalidData))
+                return
             }
             
-            
-            return .failure(PlacesError.invalidData)
-            
-        } catch {
-            return .failure(error)
+            completion(.success(existingPlace))
         }
     }
 

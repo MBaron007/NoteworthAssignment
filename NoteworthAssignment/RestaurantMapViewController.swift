@@ -14,7 +14,7 @@ class RestaurantMapViewController: UIViewController {
     
     let initialPlace: GMSPlace
     
-    var nearbyPlaces = [Place]()
+    var nearbyPlaces = [GMSPlace]()
     let placesDataSource: PlacesDataSource
 
     override func viewDidLoad() {
@@ -32,12 +32,14 @@ class RestaurantMapViewController: UIViewController {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: self.initialPlace.coordinate.latitude, longitude: self.initialPlace.coordinate.longitude)
         marker.title = self.initialPlace.name
+        marker.snippet = self.initialPlace.formattedAddress
         marker.map = mapView
         
         for place in self.nearbyPlaces {
             let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: place.location.latitude, longitude: place.location.longitude)
+            marker.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
             marker.title = place.name
+            marker.snippet = place.formattedAddress
             marker.map = mapView
             marker.icon = GMSMarker.markerImage(with: .blue)
 

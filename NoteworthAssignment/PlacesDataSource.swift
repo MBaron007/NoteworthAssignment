@@ -10,7 +10,7 @@ import Foundation
 import GooglePlaces
 
 class PlacesDataSource {
-    open var places = [Place]()
+    open var places = [GMSPlace]()
     
     let initialPlace: GMSPlace
     let radius: Double
@@ -39,13 +39,13 @@ class PlacesDataSource {
         }
     }
     
-    public func add(places: [Place]) {
+    public func add(places: [GMSPlace]) {
         for place in places {
             self.add(place: place)
         }
     }
     
-    public func add(place: Place) {
+    public func add(place: GMSPlace) {
         if !self.places.contains(place) {
             self.places.append(place)
         }
